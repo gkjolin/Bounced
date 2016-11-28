@@ -4,19 +4,31 @@ using UnityEngine.SceneManagement;
 
 public class Block : MonoBehaviour {
 
+    /// <summary>
+    /// Variable que determina si el bloque es Killer o no
+    /// </summary>
     public bool isKiller;
 
-	// Use this for initialization
+	/// <summary>
+    /// Carga el color del bloque
+    /// </summary>
 	void Start () {
         GetComponent<SpriteRenderer>().color = getRGBColor();
     }
 
-    void OnCollisionExit2D(Collision2D coll)
+    /// <summary>
+    /// Si el bloque es impactado y es Killer carga la escena "YouLost"
+    /// </summary>
+    void OnCollisionExit2D()
     {
         if(isKiller) SceneManager.LoadScene("YouLost");
     }
 
-    Color getRGBColor()
+    /// <summary>
+    /// Determina el color del bloque dependiendo de si es Killer o no
+    /// </summary>
+    /// <returns></returns>
+    private Color getRGBColor()
     {
         int r, g, b, a;
 

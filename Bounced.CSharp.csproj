@@ -81,14 +81,11 @@
     <Compile Include="Assets\Scripts\Background.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\Block.cs" />
-    <Compile Include="Assets\Scripts\ExitButton.cs" />
+    <Compile Include="Assets\Scripts\Button.cs" />
     <Compile Include="Assets\Scripts\Goal.cs" />
     <Compile Include="Assets\Scripts\Hub.cs" />
-    <Compile Include="Assets\Scripts\NextLevelButton.cs" />
-    <Compile Include="Assets\Scripts\PlayButton.cs" />
     <Compile Include="Assets\Scripts\Point.cs" />
     <Compile Include="Assets\Scripts\PointsLeft.cs" />
-    <Compile Include="Assets\Scripts\RepeatButton.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\TotalScore.cs" />

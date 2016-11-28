@@ -4,7 +4,9 @@ using UnityEngine.UI;
 
 public class TotalScore : MonoBehaviour {
 
-	// Use this for initialization
+	/// <summary>
+    /// Muestra el Score final cuando finaliza el juego
+    /// </summary>
 	void Start () {
         GetComponent<Text>().text = Hub.Score;
     }
