@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
 
 public class Hub : MonoBehaviour{
 
@@ -21,6 +19,14 @@ public class Hub : MonoBehaviour{
     void Start()
     {
         NumberOfLevels = 4;
+    }
+
+    /// <summary>
+    /// Hace que la clase Hub persista durante todo el juego aunque se cambie de escena
+    /// </summary>
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
     }
 
     /// <summary>
