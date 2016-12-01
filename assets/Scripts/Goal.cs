@@ -10,8 +10,11 @@ public class Goal : MonoBehaviour {
     /// <param name="coll"></param>
     void OnCollisionEnter2D(Collision2D coll)
     {
-        Hub.OldScore = Hub.Score;
-        Hub.Score = (Int32.Parse(Hub.Timer) + Int32.Parse(Hub.PointsLeft) + Int32.Parse(Hub.Score)).ToString();
-        SceneManager.LoadScene("FinishLevel");
+        if (coll.gameObject.name == "Ball")
+        {
+            Hub.OldScore = Hub.Score;
+            Hub.Score = (Int32.Parse(Hub.Timer) + Int32.Parse(Hub.PointsLeft) + Int32.Parse(Hub.Score)).ToString();
+            SceneManager.LoadScene("FinishLevel");
+        }
     }
 }

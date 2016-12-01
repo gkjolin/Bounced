@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour {
@@ -7,6 +8,7 @@ public class Button : MonoBehaviour {
     /// Variable que indica a qué botón se asocia en la escena
     /// </summary>
     public GameObject button;
+    int milliseconds = 400;
 
     /// <summary>
     /// Cuando detecta una pulsada del ratón determina qué tipo de botón es:
@@ -17,6 +19,9 @@ public class Button : MonoBehaviour {
     /// *RepeatButton: Repite la escena
     /// *PlayAgaintButton: Empieza el juego
     /// *NextLevelButton: Carga el siguiente nivel
+    /// 
+    /// Algunos botones tiene un delay de 400 milisegundos para dar tiempo a
+    /// levantar el dedo de la pantalla antes de que cambie la escena.
     /// </summary>
     void OnMouseDown()
     {
@@ -29,6 +34,7 @@ public class Button : MonoBehaviour {
                 break;
             case "PlayButton":
                 DeletePoints();
+                Thread.Sleep(milliseconds);
                 SceneManager.LoadScene("1");
                 break;
             case "ExitButton":
@@ -36,17 +42,20 @@ public class Button : MonoBehaviour {
                 break;
             case "RepeatButton":
                 DeletePoints();
+                Thread.Sleep(milliseconds);
                 Hub.Score = Hub.OldScore;
                 SceneManager.LoadScene(Hub.CurrentLevel.ToString());
                 break;
             case "PlayAgaintButton":
                 DeletePoints();
+                Thread.Sleep(milliseconds);
                 SceneManager.LoadScene("1");
                 Hub.CurrentLevel = 1;
                 Hub.Score = "0";
                 Hub.OldScore = "0";
                 break;
             case "NextLevelButton":
+                Thread.Sleep(milliseconds);
                 DeletePoints();
                 if (Hub.CurrentLevel < Hub.NumberOfLevels)
                 {
