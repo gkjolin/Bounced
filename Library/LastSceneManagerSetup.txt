@@ -1,4 +1,4 @@
 sceneSetups:
-- path: assets/Scenes/MainMenu.unity
+- path: assets/Scenes/YouLost.unity
   isLoaded: 1
   isActive: 1
